@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CollectionViewDisposal;assembly=CollectionViewDisposal"
+             x:Class="CollectionViewDisposal.TestPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Vertical" Spacing="5" Grid.Row="0" VerticalOptions="Center">
+                <Label x:Name="Label" LineBreakMode="WordWrap" Text="Place a breakpoint in the Dispose method of MyCheckBoxRenderer.cs for the appropriate platform, then click the Back button. Does the breakpoint halt the program? If so, good. The Dispose method was called." HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Padding="30,10,30,10"/>
+            </StackLayout>
+            <CollectionView AutomationId="CollectionView5354" Grid.Row="2" ItemsSource="{Binding Items}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="Beige" Padding="10">
+                            <local:MyCheckBox/>
+                            <Label Text="{Binding Text}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

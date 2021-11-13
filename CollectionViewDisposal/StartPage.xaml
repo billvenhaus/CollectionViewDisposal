@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewDisposal.StartPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="CollectionView Disposal" HorizontalTextAlignment="Center" TextColor="White" FontSize="32"/>
+        </Frame>
+        <Label Text="Item Renderers" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="On Android, the item renderers of a CollectionView never get disposed. Dispose is only called on the CollectionView renderer itself. Its children are ignored." FontSize="16" Padding="30,0,30,0"/>
+        <Label Text="To test, place breakpoints in Dispose for MyCheckBoxRenderer.cs, click Open Test, then click the Back button." FontSize="16" Padding="30,10,30,0"/>
+        <Label Text="Does the breakpoint halt the program?" FontSize="16" Padding="30,10,30,0"/>
+        <Label Text="If so, good. The Dispose method was called." FontSize="16" Padding="30,10,30,0"/>
+        <Button Text="Open Test" HorizontalOptions="Center" Clicked="Button_Clicked"/>
+        <Label Text="This is not an issue on iOS or UWP. It's only an issue on Android. Dispose is called on the item renderers for iOS and UWP." FontSize="14" Padding="30,60,30,80" Opacity=".8" VerticalOptions="EndAndExpand" />
+    </StackLayout>
+
+</ContentPage>
